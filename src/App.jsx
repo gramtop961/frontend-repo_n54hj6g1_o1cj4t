@@ -1,28 +1,35 @@
-import { useState } from 'react'
+import React from 'react';
+import Hero from './components/Hero.jsx';
+import About from './components/About.jsx';
+import Highlights from './components/Highlights.jsx';
+import Projects from './components/Projects.jsx';
 
-function App() {
-  const [count, setCount] = useState(0)
-
+export default function App() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 to-blue-50 flex items-center justify-center">
-      <div className="bg-white p-8 rounded-lg shadow-lg">
-        <h1 className="text-3xl font-bold text-gray-800 mb-4">
-          Vibe Coding Platform
-        </h1>
-        <p className="text-gray-600 mb-6">
-          Your AI-powered development environment
-        </p>
-        <div className="text-center">
-          <button
-            onClick={() => setCount(count + 1)}
-            className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded"
-          >
-            Count is {count}
-          </button>
-        </div>
-      </div>
-    </div>
-  )
-}
+    <div className="min-h-screen bg-gradient-to-b from-slate-950 via-slate-900 to-black text-slate-100 antialiased">
+      {/* Hero */}
+      <section id="hero">
+        <Hero />
+      </section>
 
-export default App
+      {/* About + Skills + Contact */}
+      <section id="about" className="scroll-mt-24">
+        <About />
+      </section>
+
+      {/* Education + Achievements + Experience */}
+      <section id="highlights" className="scroll-mt-24">
+        <Highlights />
+      </section>
+
+      {/* Projects */}
+      <section id="projects" className="scroll-mt-24">
+        <Projects />
+      </section>
+
+      <footer className="py-10 text-center text-sm text-slate-400">
+        © {new Date().getFullYear()} Boopathi V · Built with love, React & Tailwind
+      </footer>
+    </div>
+  );
+}
